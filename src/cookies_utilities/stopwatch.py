@@ -1,12 +1,21 @@
 import time
 
 
-class Timer:
+class Stopwatch:
+    """ Stopwatch for measuring processing time.
+    """
     def __init__(self):
         self.cache = []
+
     def press(self, key=''):
+        """ Press the stopwatch.
+        :param str key: the idenficator for the time (optional).
+        """
         self.cache.append((key, time.perf_counter()))
+
     def show(self):
+        """ Show lap times.
+        """
         if len(self.cache) < 2:
             return
         for i in range(1, len(self.cache)):

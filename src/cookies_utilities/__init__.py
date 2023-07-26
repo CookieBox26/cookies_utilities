@@ -1,1 +1,1 @@
-from cookies_utilities.timer import Timer
+from cookies_utilities.stopwatch import Stopwatch

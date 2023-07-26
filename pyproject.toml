@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "cookies_utilities"
-version = "0.0.1"
+version = "0.0.4"
 authors = [
   { name="CookieBox26", email="cookie-box@cookie-box.info" },
 ]
@@ -16,3 +16,4 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+urls = { "GitHub" = "https://github.com/CookieBox26/cookies_utilities" }
