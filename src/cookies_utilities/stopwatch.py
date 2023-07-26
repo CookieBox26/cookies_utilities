@@ -9,7 +9,8 @@ class Stopwatch:
 
     def press(self, key=''):
         """ Press the stopwatch.
-        :param str key: the idenficator for the time (optional).
+
+        :param string key: The idenficator for the time (optional).
         """
         self.cache.append((key, time.perf_counter()))
 
