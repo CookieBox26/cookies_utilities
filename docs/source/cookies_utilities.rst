@@ -1,21 +1,10 @@
-cookies\_utilities package
-==========================
+Documentation
+=============
 
-Submodules
-----------
+The ``cookies_utilities.Stopwatch`` class
+*****************************************
 
-cookies\_utilities.stopwatch module
------------------------------------
-
-.. automodule:: cookies_utilities.stopwatch
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: cookies_utilities
+.. autoclass:: cookies_utilities.Stopwatch
    :members:
    :undoc-members:
    :show-inheritance:
