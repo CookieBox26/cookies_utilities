@@ -16,4 +16,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-urls = { "GitHub" = "https://github.com/CookieBox26/cookies_utilities" }
+
+[project.urls]
+GitHub = "https://github.com/CookieBox26/cookies_utilities"
+Documentation = "https://cookies-utilities.readthedocs.io/en/latest/index.html"
