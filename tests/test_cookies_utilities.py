@@ -47,3 +47,10 @@ class TestCookiesUtilities(unittest.TestCase):
         self.assertEqual(dates.__next__(), '2016-07-01')
         self.assertEqual(dates.__next__(), '2016-07-02')
         self.assertEqual(dates.__next__(), '2016-07-03')
+
+        with self.assertRaises(ValueError):
+            dates = cu.get_dates(
+                start='2016-07-01',
+                end='2016-07-03',
+                format='%Y-%m-%d',
+                delta={'days': 0})

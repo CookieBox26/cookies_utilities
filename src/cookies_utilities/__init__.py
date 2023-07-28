@@ -13,13 +13,14 @@ def get_dates(
 ):
     """ Returns a list of times from the 'start' time to the 'end' time,
     incremented by 'delta'.
+    Please ensure 'delta' is greater than or equal to 1 microsecond.
 
     If you're using the result as an iterator, it is recommended to set *geniter=True*.
 
     :param string start: Start time string.
     :param string end: End time string (inclusive).
     :param string format: Conversion format for datetime.strptime.
-    :param dict delta: Timedelta as args for datetime.timedelta.
+    :param dict delta: Timedelta as args for datetime.timedelta (>= 1 microsecond).
     :param bool geniter: Whether to return as a generator iterator (default *False*).
     :param bool cast_str: Whether to convert output to string (default *True*).
     :param string format_out: Conversion format for output (default same to **format**).
@@ -31,6 +32,8 @@ def get_dates(
     dt_ = datetime.datetime.strptime(start, format)
     end_ = datetime.datetime.strptime(end, format)
     delta_ = datetime.timedelta(**delta)
+    if delta_ < datetime.timedelta(microseconds=1):
+        raise ValueError('Invalid argument: delta must be greater than or equal to 1 microsecond.')
 
     def _generator(dt_, end_, delta_, cast_str, format_out):
         while not end_ < dt_:
