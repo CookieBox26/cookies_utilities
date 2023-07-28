@@ -1,6 +1,6 @@
 # Cookie's Utilities
 
-Utility functions.
+Utility functions and classes.
 
 - [TestPyPI](https://test.pypi.org/project/cookies-utilities/)
 - [Documentation](https://cookies-utilities.readthedocs.io/en/latest/index.html)
@@ -16,11 +16,22 @@ Please execute the following at the root of the repository.
 Please run the following commands.
 
 ```
-pip uninstall cookies_utilities  # uninstall the package if already installed
-pip install -e .  #  install the package in editable mode
+pip install -e .  # install the package in editable mode
 python -m unittest discover tests -v  # test
 ```
 If an error occurs, you can fix the code and rerun the tests without having to reinstall the package.
+
+#### Update documentation
+
+If you add a new function or class, please update the documentation accordingly.
+
+```
+cd docs
+vi source/cookies_utilities.rst  # add a new function or class
+./make.bat html  # or 'make html' (not on Windows)
+# Please open 'docs/build/html/index.html' in your browser and check the content.
+cd ..
+```
 
 #### Build the distribution archives
 
