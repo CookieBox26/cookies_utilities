@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.abspath('../../src/cookies_utilities/'))
 project = 'cookies_utilities'
 copyright = '2023, CookieBox26'
 author = 'CookieBox26'
-release = '0.0.4'
+release = '0.0.1'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

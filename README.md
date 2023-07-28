@@ -2,7 +2,8 @@
 
 Utility functions and classes.
 
-- [TestPyPI](https://test.pypi.org/project/cookies-utilities/)
+<!-- - [TestPyPI](https://test.pypi.org/project/cookies-utilities/) -->
+- [PyPI](https://pypi.org/project/cookies-utilities/)
 - [Documentation](https://cookies-utilities.readthedocs.io/en/latest/index.html)
 
 ---
@@ -49,12 +50,13 @@ The following files will be generated.
 ./dist/cookies_utilities-0.0.1-py3-none-any.whl
 ```
 
-#### Upload the distribution archives to TestPyPI
+#### Upload the distribution archives to TestPyPI (PyPI)
 
 Please run the following commands. More details are [here](https://packaging.python.org/en/latest/tutorials/packaging-projects/#uploading-the-distribution-archives).
 
 ```
 pip install --upgrade twine
-python -m twine upload --repository testpypi dist/*
+python -m twine upload --repository testpypi dist/*  # TestPyPI
+python -m twine upload dist/*  # PyPI
 ```
 

@@ -4,7 +4,9 @@ Welcome to cookies_utilities' documentation!
 Links
 *****
 
-- `TestPyPI <https://test.pypi.org/project/cookies-utilities/>`_
+.. - `TestPyPI <https://test.pypi.org/project/cookies-utilities/>`_
+
+- `PyPI <https://pypi.org/project/cookies-utilities/>`_
 - `GitHub <https://github.com/CookieBox26/cookies_utilities>`_
 
 .. toctree::
