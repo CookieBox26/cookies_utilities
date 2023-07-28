@@ -2,6 +2,9 @@
 
 Utility functions.
 
+- [TestPyPI](https://test.pypi.org/project/cookies-utilities/)
+- [Documentation](https://cookies-utilities.readthedocs.io/en/latest/index.html)
+
 ---
 
 ### Development Guide

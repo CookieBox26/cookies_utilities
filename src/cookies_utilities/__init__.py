@@ -14,7 +14,7 @@ def get_dates(
     incremented by 'delta'.
 
     :param string start: Start time string.
-    :param string end: End time string.
+    :param string end: End time string (inclusive).
     :param string format: Conversion format for datetime.strptime.
     :param dict delta: Timedelta as args for datetime.timedelta.
     :param bool cast_str: Whether to convert output to string (default true).
