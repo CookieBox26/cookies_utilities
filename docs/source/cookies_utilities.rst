@@ -11,15 +11,53 @@ cookies_utilities.get_dates
 
 **Example**
 
+An example of incrementing by one day.
+
 .. code-block:: python
 
    import cookies_utilities as cu
    dates = cu.get_dates(
-       start='2016-07-01 02:00:00',
-       end='2016-07-02 01:00:00',
+       start='2016/07/01', end='2016/07/03', format='%Y/%m/%d',
+       delta={'days': 1}, format_out='%Y-%m-%d')
+   print(dates)
+
+.. code-block:: console
+
+   ['2016-07-01', '2016-07-02', '2016-07-03']
+
+An example of incrementing by 20 minutes.
+
+.. code-block:: python
+
+   import cookies_utilities as cu
+   dates = cu.get_dates(
+       start='2016-07-01 02:00:00', end='2016-07-01 03:00:00',
        format='%Y-%m-%d %H:%M:%S',
-       delta={'hours': 1})
-   # ['2016-07-01 02:00:00', '2016-07-01 03:00:00', ..., '2016-07-02 01:00:00']
+       delta={'minutes': 20})
+   print(dates)
+
+.. code-block:: console
+
+   ['2016-07-01 02:00:00', '2016-07-01 02:20:00', '2016-07-01 02:40:00', '2016-07-01 03:00:00']
+
+An example of retrieving as a generator iterator.
+
+.. code-block:: python
+
+   import cookies_utilities as cu
+   dates = cu.get_dates(
+       start='2016/07/01', end='2016/07/03', format='%Y/%m/%d',
+       delta={'days': 1}, geniter=True)
+   print(type(dates))
+   for date in dates:
+       print(date)
+
+.. code-block:: console
+
+   <class 'generator'>
+   2016/07/01
+   2016/07/02
+   2016/07/03
 
 Classes
 *******

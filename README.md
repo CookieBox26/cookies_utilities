@@ -3,8 +3,9 @@
 Utility functions and classes.
 
 <!-- - [TestPyPI](https://test.pypi.org/project/cookies-utilities/) -->
-- [PyPI](https://pypi.org/project/cookies-utilities/)
-- [Documentation](https://cookies-utilities.readthedocs.io/en/latest/index.html)
+<!-- - [PyPI](https://pypi.org/project/cookies-utilities/) -->
+- [Documentation (released)](https://cookies-utilities.readthedocs.io/en/stable/)
+- [Documentation (main branch HEAD)](https://cookies-utilities.readthedocs.io/en/latest/)
 
 ---
 

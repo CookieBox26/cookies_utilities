@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "cookies_utilities"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="CookieBox26", email="cookie-box@cookie-box.info" },
 ]
@@ -19,4 +19,4 @@ classifiers = [
 
 [project.urls]
 GitHub = "https://github.com/CookieBox26/cookies_utilities"
-Documentation = "https://cookies-utilities.readthedocs.io/en/latest/index.html"
+Documentation = "https://cookies-utilities.readthedocs.io/en/stable/"
