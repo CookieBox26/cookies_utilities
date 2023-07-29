@@ -9,7 +9,23 @@ Utility functions and classes.
 
 ---
 
-### Development Guide
+## Installation (for Users)
+
+You can install the release version from PyPI.
+
+```
+pip install cookies_utilities
+```
+
+If you want to use the latest version that has not been released, clone this repository and install from the local directory.
+
+```
+git clone https://github.com/CookieBox26/cookies_utilities.git
+cd cookies_utilities
+pip install .
+```
+
+## Development Guide (for Developers)
 
 Please execute the following at the root of the repository.
 
@@ -18,6 +34,9 @@ Please execute the following at the root of the repository.
 Please run the following commands.
 
 ```
+git clone https://github.com/CookieBox26/cookies_utilities.git
+cd cookies_utilities
+# make some changes to the code
 pip install -e .  # install the package in editable mode
 python -m unittest discover tests -v  # test
 ```
