@@ -20,9 +20,6 @@ If you want to use the latest version that has not been released, clone `our Git
    cd cookies_utilities
    pip install .
 
-If you want to maintain this package, please refer to `the README in the GitHub repository <https://github.com/CookieBox26/cookies_utilities/blob/main/README.md>`_.
-
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents
@@ -35,7 +32,8 @@ Links
 .. - `TestPyPI <https://test.pypi.org/project/cookies-utilities/>`_
 
 - `PyPI <https://pypi.org/project/cookies-utilities/>`_
-- `GitHub <https://github.com/CookieBox26/cookies_utilities>`_
+- `GitHub <https://github.com/CookieBox26/cookies_utilities>`_ – If you want to maintain this package, please refer to the README in the GitHub repository.
+
 
 Index
 *****

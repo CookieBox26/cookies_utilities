@@ -29,7 +29,7 @@ pip install .
 
 Please execute the following at the root of the repository.
 
-#### Test locally
+### Test locally
 
 Please run the following commands.
 
@@ -42,7 +42,7 @@ python -m unittest discover tests -v  # test
 ```
 If an error occurs, you can fix the code and rerun the tests without having to reinstall the package.
 
-#### Update documentation
+### Update documentation
 
 If you add a new function or class, please update the documentation accordingly.
 
@@ -54,7 +54,9 @@ vi source/cookies_utilities.rst  # add a new function or class
 cd ..
 ```
 
-#### Build the distribution archives
+If you are not an administrator, please open a pull request at this point.
+
+### Build and upload the distribution archives (for administrator only)
 
 Please run the following commands. More details are [here](https://packaging.python.org/en/latest/tutorials/packaging-projects/#generating-distribution-archives).
 
@@ -70,9 +72,7 @@ The following files will be generated.
 ./dist/cookies_utilities-0.0.1-py3-none-any.whl
 ```
 
-#### Upload the distribution archives to TestPyPI (PyPI)
-
-Please run the following commands. More details are [here](https://packaging.python.org/en/latest/tutorials/packaging-projects/#uploading-the-distribution-archives).
+Then please run the following commands. More details are [here](https://packaging.python.org/en/latest/tutorials/packaging-projects/#uploading-the-distribution-archives).
 
 ```
 pip install --upgrade twine
