@@ -6,7 +6,7 @@ This package is intended to provide useful functions and classes. Please see :do
 Installation
 ************
 
-You can install the release version from PyPI.
+You can install the release version from `PyPI <https://pypi.org/project/cookies-utilities/>`_.
 
 .. code-block:: console
 

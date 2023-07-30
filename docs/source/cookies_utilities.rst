@@ -86,6 +86,6 @@ cookies_utilities.Stopwatch
 
 .. code-block:: console
 
-   time1(train start-train end): 2.000s
-   time2(train end-test end): 1.000s
+   time1 (train start - train end): 2.000s
+   time2 (train end - test end): 1.000s
    total: 3.000s
