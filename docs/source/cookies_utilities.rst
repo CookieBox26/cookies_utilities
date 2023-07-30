@@ -4,6 +4,21 @@ Documentation
 Functions
 *********
 
+cookies_utilities.copy_datetime
+-------------------------------
+
+.. autofunction:: cookies_utilities.copy_datetime
+
+**Example**
+
+.. code-block:: python
+
+   import cookies_utilities as cu
+   import datetime
+
+   dt = datetime.datetime.strptime('2016-07-01 02:15:00', '%Y-%m-%d %H:%M:%S')
+   dt_copy = cu.copy_datetime(dt, {'minute': 0})  # --> 2016-07-01 02:00:00
+
 cookies_utilities.get_dates
 ---------------------------
 
@@ -58,6 +73,45 @@ An example of retrieving as a generator iterator.
    2016/07/01
    2016/07/02
    2016/07/03
+
+cookies_utilities.convert_time_to_feature
+-----------------------------------------
+
+.. autofunction:: cookies_utilities.convert_time_to_feature
+
+.. code-block:: python
+
+   import cookies_utilities as cu
+
+   feature_value = cu.convert_time_to_feature(
+       dt='2023-01-02 03:40:50', format='%Y-%m-%d %H:%M:%S',
+       period='day', ceiling='hour')
+   #  --> 0.125  ( 3:00 am is 12.5% of the day )
+
+   feature_value = cu.convert_time_to_feature(
+       dt='2023-01-02 03:40:50', format='%Y-%m-%d %H:%M:%S',
+       period='year', ceiling='day')
+   #  --> 0.002732  ( 1.0 / 366.0 )
+
+   feature_value = cu.convert_time_to_feature(
+       dt='2023-01-02 03:40:50', format='%Y-%m-%d %H:%M:%S',
+       period='month', ceiling='day')
+   #  --> 0.032258  ( 1.0 / 31.0 )
+
+   feature_value = cu.convert_time_to_feature(
+       dt='2023-01-02 03:40:50', format='%Y-%m-%d %H:%M:%S',
+       period='week', ceiling='hour')
+   #  --> 0.017857  ( 0.125 / 7.0 )
+
+   feature_value = cu.convert_time_to_feature(
+       dt='2023-01-02 03:40:50', format='%Y-%m-%d %H:%M:%S',
+       period='hour', ceiling='minute')
+   #  --> 0.666667  ( 40.0 / 60.0 )
+
+   feature_value = cu.convert_time_to_feature(
+       dt='2023-01-02 03:40:50', format='%Y-%m-%d %H:%M:%S',
+       period='minute')
+   #  --> 0.833333  ( 50.0 / 60.0 )
 
 Classes
 *******

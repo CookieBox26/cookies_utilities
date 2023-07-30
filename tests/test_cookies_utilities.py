@@ -6,6 +6,16 @@ import types
 
 class TestCookiesUtilities(unittest.TestCase):
 
+    def test_copy_datetime(self):
+        dt = datetime.datetime.strptime('2016-07-01 02:15:00', '%Y-%m-%d %H:%M:%S')
+        dt_copy = cu.copy_datetime(dt)
+        self.assertEqual(dt_copy, dt)
+
+        dt = datetime.datetime.strptime('2016-07-01 02:15:00', '%Y-%m-%d %H:%M:%S')
+        dt_copy = cu.copy_datetime(dt, {'minute': 0})
+        dt_expected = datetime.datetime.strptime('2016-07-01 02:00:00', '%Y-%m-%d %H:%M:%S')
+        self.assertEqual(dt_copy, dt_expected)
+
     def test_get_dates(self):
         dates = cu.get_dates(
             start='2016-07-01 02:00:00',
@@ -54,3 +64,16 @@ class TestCookiesUtilities(unittest.TestCase):
                 end='2016-07-03',
                 format='%Y-%m-%d',
                 delta={'days': 0})
+
+    def test_convert_time_to_feature(self):
+        dt = '2023-01-02 03:40:50'
+        format = '%Y-%m-%d %H:%M:%S'
+
+        fv = cu.convert_time_to_feature(dt, format, period='year', ceiling='day')
+        self.assertAlmostEqual(fv, 1.0 / 366.0)
+
+        fv = cu.convert_time_to_feature(dt, format, period='year', ceiling='hour')
+        self.assertAlmostEqual(fv, 1.125 / 366.0)
+
+        fv = cu.convert_time_to_feature(dt, format, period='day', ceiling='hour')
+        self.assertAlmostEqual(fv, 0.125)
