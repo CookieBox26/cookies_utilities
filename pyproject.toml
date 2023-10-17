@@ -17,6 +17,11 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+[project.optional-dependencies]
+docs = [
+    "sphinx-rtd-theme",
+]
+
 [project.urls]
 GitHub = "https://github.com/CookieBox26/cookies_utilities"
 Documentation = "https://cookies-utilities.readthedocs.io/en/stable/"
