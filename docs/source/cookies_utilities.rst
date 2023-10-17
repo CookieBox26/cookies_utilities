@@ -113,6 +113,37 @@ cookies_utilities.convert_time_to_feature
        period='minute')
    #  --> 0.833333  ( 50.0 / 60.0 )
 
+cookies_utilities.has_diff_local_and_remote
+-------------------------------------------
+
+.. autofunction:: cookies_utilities.has_diff_local_and_remote
+
+**Example**
+
+An example script of check whether the local directory is synchronized with the specified URL.
+
+.. code-block:: python
+
+   import cookies_utilities as cu
+   import getpass
+
+
+   if __name__ == '__main__':
+       username = getpass.getpass('Please enter username: ')
+       password = getpass.getpass('Please enter password: ')
+       while True:
+           cu.has_diff_local_and_remote(
+               local_dir='./hoge/',
+               remote_url='https://hoge/',
+               username=username, password=password,
+               exts='html|css|js|tex|sty',
+               binary_exts='png|jpg|pdf|pptx|ps|eps',
+           )
+           print('----- END -----')
+           user_input = input('Press Enter to continue or type `q` to quit: ')
+           if user_input == 'q':
+               break
+
 Classes
 *******
 
