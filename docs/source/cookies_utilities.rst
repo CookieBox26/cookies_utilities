@@ -174,3 +174,60 @@ cookies_utilities.Stopwatch
    time1 (train start - train end): 2.000s
    time2 (train end - test end): 1.000s
    total: 3.000s
+
+
+cookies_utilities.HtmlHelper
+----------------------------
+
+.. autoclass:: cookies_utilities.HtmlHelper
+   :members:
+   :undoc-members:
+
+..   :show-inheritance:
+
+**Example**
+
+Below is an example of converting a Markdown file to an HTML file. The mistletoe package is used for the Markdown conversion.
+
+.. code-block:: python
+
+   from cookies_utilities import HtmlHelper
+   import mistletoe
+   import re
+
+   def main(md_path):
+       hh = HtmlHelper()
+
+       # Reads the markdown file, converts it to HTML, and appends to the body.
+       assert re.search(r'\.md$', md_path)
+       hh.set_markdown(md_path, mistletoe.markdown)
+
+       # You can also customize the CSS.
+       # Since `css` attribute is a subclass of a dictionary,
+       # you can set it directly by specifying a key.
+       #  Ex. hh.css['body']['background'] = 'lemonchiffon'
+       # Using the method below, it checks for the existence of
+       # the 'body' key and adds it if not present.
+       hh.css.set('body', 'background', 'lemonchiffon')
+
+       hh.to_html(re.sub(r'\.md$', '.html', md_path))
+
+   if __name__ == '__main__':
+       main('./README.md')
+
+Below is an example of outputting a Pandas DataFrame to an HTML file.
+
+.. code-block:: python
+
+   from cookies_utilities import HtmlHelper
+   import pandas as pd
+
+   df = pd.DataFrame(columns=['id', 'name'])
+   df.loc[0] = ['001', 'Alice']
+   df.loc[1] = ['002', 'Bob']
+   df.loc[2] = ['003', 'Carol']
+
+   hh = HtmlHelper()
+   hh.append_heading(1, 'Employees')
+   hh.append(df.to_html(index=False))
+   hh.to_html('employees.html')

@@ -19,6 +19,8 @@ release = '0.0.1'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = ['sphinx.ext.autodoc']
+autoclass_content = 'both'
+autodoc_typehints = 'description'
 
 templates_path = ['_templates']
 exclude_patterns = []

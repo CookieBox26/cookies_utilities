@@ -3,6 +3,7 @@ import base64
 import glob
 import os
 import re
+from typing import Optional
 
 
 def get_remote_content(url, username=None, password=None, binary=False):
@@ -60,19 +61,23 @@ def has_diff_paths(path_0, path_1, username=None, password=None, binary=False):
 
 
 def has_diff_local_and_remote(
-    local_dir, remote_url, username=None, password=None,
-    exts='html|css|js', binary_exts='png|jpg|pdf',
-):
+    local_dir: str,
+    remote_url: str,
+    username: Optional[str] = None,
+    password: Optional[str] = None,
+    exts: str = 'html|css|js',
+    binary_exts: str = 'png|jpg|pdf',
+) -> None:
     """ Recursively checks whether the local directory is synchronized with the specified URL.
     
     For binary files, only their presence and file size will be checked without verifying the content differences.
 
-    :param string local_dir: The path to the local directory.
-    :param string remote_url: The URL to be checked against.
-    :param string username: The username for basic authentication. If the URL is protected, please specify (optional).
-    :param string password: The password for basic authentication. If the URL is protected, please specify (optional).
-    :param string exts: A pipe-separated list of file extensions to be checked. Default is "html|css|js" (optional).
-    :param string binary_exts: A pipe-separated list of binary file extensions to be checked. Default is "png|jpg|pdf" (optional).
+    :param local_dir: The path to the local directory.
+    :param remote_url: The URL to be checked against.
+    :param username: The username for basic authentication. If the URL is protected, please specify (optional).
+    :param password: The password for basic authentication. If the URL is protected, please specify (optional).
+    :param exts: A pipe-separated list of file extensions to be checked. Default is "html|css|js" (optional).
+    :param binary_exts: A pipe-separated list of binary file extensions to be checked. Default is "png|jpg|pdf" (optional).
     """
     for local_file in glob.glob(local_dir + '**', recursive=True):
         if not os.path.isfile(local_file):
