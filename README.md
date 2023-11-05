@@ -37,10 +37,8 @@ Please run the following commands.
 git clone https://github.com/CookieBox26/cookies_utilities.git
 cd cookies_utilities
 # make some changes to the code
-pip install -e .  # install the package in editable mode
 python -m unittest discover tests -v  # test
 ```
-If an error occurs, you can fix the code and rerun the tests without having to reinstall the package.
 
 ### Update documentation
 

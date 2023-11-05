@@ -200,7 +200,7 @@ Below is an example of converting a Markdown file to an HTML file. The mistletoe
 
        # Reads the markdown file, converts it to HTML, and appends to the body.
        assert re.search(r'\.md$', md_path)
-       hh.set_markdown(md_path, mistletoe.markdown)
+       hh.append_markdown(md_path, mistletoe.markdown)
 
        # You can also customize the CSS.
        # Since `css` attribute is a subclass of a dictionary,
